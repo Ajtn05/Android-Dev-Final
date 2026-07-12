@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Buttons: filled = primary action, outlined = secondary, text = tertiary -->
+    <style name="App.Button.Primary" parent="Widget.Material3.Button" />
+
+    <style name="App.Button.Secondary" parent="Widget.Material3.Button.OutlinedButton" />
+
+    <style name="App.Button.Text" parent="Widget.Material3.Button.TextButton" />
+
+    <style name="App.Button.Text.Destructive">
+        <item name="android:textColor">?attr/colorError</item>
+    </style>
+
+    <style name="App.Button.Nav" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textColor">@color/nav_text_color</item>
+        <item name="android:minWidth">0dp</item>
+    </style>
+
+    <!-- Text appearances -->
+    <style name="App.Text.Headline" parent="TextAppearance.Material3.HeadlineSmall" />
+
+    <style name="App.Text.Title" parent="TextAppearance.Material3.TitleMedium" />
+
+    <style name="App.Text.Body" parent="TextAppearance.Material3.BodyMedium" />
+
+    <style name="App.Text.Secondary" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <style name="App.Text.Caption" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+</resources>

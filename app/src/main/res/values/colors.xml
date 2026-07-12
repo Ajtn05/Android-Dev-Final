@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Brand: deep green -->
+    <color name="green_primary">#2E7D32</color>
+    <color name="green_on_primary">#FFFFFF</color>
+    <color name="green_primary_container">#C8E6C9</color>
+    <color name="green_on_primary_container">#1B5E20</color>
+    <color name="green_primary_dark">#81C784</color>
+    <color name="green_on_primary_dark">#0B3D10</color>
+    <color name="green_primary_container_dark">#1B5E20</color>
+    <color name="green_on_primary_container_dark">#C8E6C9</color>
+
+    <!-- Secondary: muted sage -->
+    <color name="sage_secondary">#52634F</color>
+    <color name="sage_on_secondary">#FFFFFF</color>
+    <color name="sage_secondary_container">#D5E8CF</color>
+    <color name="sage_on_secondary_container">#101F10</color>
+    <color name="sage_secondary_dark">#B9CCB4</color>
+    <color name="sage_on_secondary_dark">#243424</color>
+    <color name="sage_secondary_container_dark">#3A4B38</color>
+    <color name="sage_on_secondary_container_dark">#D5E8CF</color>
+
+    <!-- Neutrals: light -->
+    <color name="surface_light">#FFFFFF</color>
+    <color name="on_surface_light">#191C19</color>
+    <color name="surface_variant_light">#EFF1EC</color>
+    <color name="on_surface_variant_light">#5F625E</color>
+    <color name="outline_light">#8F918D</color>
+    <color name="outline_variant_light">#E0E2DD</color>
+    <color name="surface_container_low_light">#F7F8F5</color>
+    <color name="surface_container_light">#F1F2EF</color>
+    <color name="surface_container_high_light">#EBEDE8</color>
+
+    <!-- Neutrals: dark -->
+    <color name="surface_dark">#121412</color>
+    <color name="on_surface_dark">#E2E4DF</color>
+    <color name="surface_variant_dark">#252825</color>
+    <color name="on_surface_variant_dark">#A5A8A3</color>
+    <color name="outline_dark">#7F827D</color>
+    <color name="outline_variant_dark">#2C2F2C</color>
+    <color name="surface_container_low_dark">#1A1C1A</color>
+    <color name="surface_container_dark">#1E211E</color>
+    <color name="surface_container_high_dark">#282B28</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>
