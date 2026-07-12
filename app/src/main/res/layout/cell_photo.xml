@@ -3,20 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="4dp"
+    android:padding="@dimen/space_xs"
     android:background="?android:attr/selectableItemBackground">
 
     <ImageView
         android:id="@+id/cellPhotoImage"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="@dimen/size_photo_cell"
+        android:background="?attr/colorSurfaceContainer"
+        android:contentDescription="@string/cd_progress_photo"
         android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/ic_placeholder" />
 
     <TextView
         android:id="@+id/cellPhotoDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_xs"
         android:gravity="center"
-        android:textSize="12sp" />
+        android:textAppearance="@style/App.Text.Caption" />
 </LinearLayout>

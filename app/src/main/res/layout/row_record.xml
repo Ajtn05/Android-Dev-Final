@@ -3,20 +3,19 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="12dp"
+    android:paddingHorizontal="@dimen/space_md"
+    android:paddingVertical="12dp"
     android:background="?android:attr/selectableItemBackground">
 
     <TextView
         android:id="@+id/rowRecordName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textAppearance="@style/App.Text.Title" />
 
     <TextView
         android:id="@+id/rowRecordDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="#666666" />
+        android:textAppearance="@style/App.Text.Secondary" />
 </LinearLayout>

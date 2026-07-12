@@ -2,37 +2,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:paddingVertical="@dimen/space_xs">
 
     <Button
         android:id="@+id/btnNavRoutines"
+        style="@style/App.Button.Nav"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Routines"
-        style="?android:attr/buttonStyleSmall" />
+        android:text="@string/nav_routines" />
 
     <Button
         android:id="@+id/btnNavRecords"
+        style="@style/App.Button.Nav"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Records"
-        style="?android:attr/buttonStyleSmall" />
+        android:text="@string/nav_records" />
 
     <Button
         android:id="@+id/btnNavHistory"
+        style="@style/App.Button.Nav"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="History"
-        style="?android:attr/buttonStyleSmall" />
+        android:text="@string/nav_history" />
 
     <Button
         android:id="@+id/btnNavPics"
+        style="@style/App.Button.Nav"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Pics"
-        style="?android:attr/buttonStyleSmall" />
+        android:text="@string/nav_photos" />
 </LinearLayout>

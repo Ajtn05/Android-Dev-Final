@@ -3,35 +3,33 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="12dp"
+    android:paddingHorizontal="@dimen/space_md"
+    android:paddingVertical="12dp"
     android:background="?android:attr/selectableItemBackground">
 
     <TextView
         android:id="@+id/rowLogRoutine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textAppearance="@style/App.Text.Title" />
 
     <TextView
         android:id="@+id/rowLogDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp" />
+        android:textAppearance="@style/App.Text.Body" />
 
     <TextView
         android:id="@+id/rowLogVolume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="#666666" />
+        android:textAppearance="@style/App.Text.Secondary" />
 
     <TextView
         android:id="@+id/rowLogNotes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
-        android:textColor="#999999"
+        android:textAppearance="@style/App.Text.Caption"
         android:maxLines="1"
         android:ellipsize="end" />
 </LinearLayout>

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="8dp"
+    android:padding="@dimen/space_sm"
     android:gravity="center_vertical">
 
     <TextView
@@ -11,24 +11,27 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="14sp" />
+        android:textAppearance="@style/App.Text.Body" />
 
     <EditText
         android:id="@+id/setWeightInput"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:hint="Wt"
+        android:layout_marginStart="@dimen/space_sm"
+        android:hint="@string/hint_set_weight"
         android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/setRepsInput"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:hint="Reps"
+        android:layout_marginStart="@dimen/space_sm"
+        android:hint="@string/hint_reps"
         android:inputType="number" />
 
     <CheckBox
         android:id="@+id/setCompletedCheck"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_sm" />
 </LinearLayout>
