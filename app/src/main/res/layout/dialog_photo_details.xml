@@ -3,26 +3,28 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="@dimen/space_lg">
 
     <EditText
         android:id="@+id/photoWeightInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Current bodyweight (lbs)"
+        android:hint="@string/hint_current_bodyweight"
         android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/photoPoseInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Pose tag (e.g. Front Flex)"
+        android:layout_marginTop="@dimen/space_sm"
+        android:hint="@string/hint_pose_tag"
         android:inputType="text" />
 
     <EditText
         android:id="@+id/photoNotesInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Notes (optional)"
+        android:layout_marginTop="@dimen/space_sm"
+        android:hint="@string/hint_notes_optional"
         android:inputType="text" />
 </LinearLayout>
