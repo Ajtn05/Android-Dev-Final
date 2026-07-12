@@ -28,6 +28,8 @@ gradle/wrapper/gradle-wrapper.jar
 *.jar
 *.aar
 *.dex
+!app/libs/*.jar
+!app/libs/*.aar
 
 # Editor swap files
 *.swp
