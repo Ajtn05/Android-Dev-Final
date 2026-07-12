@@ -88,10 +88,10 @@ public class HomeActivity extends AppCompatActivity {
                         .memoryPolicy(MemoryPolicy.NO_CACHE)
                         .into(welcomeImageView);
             } else {
-                welcomeImageView.setImageResource(R.mipmap.ic_launcher);
+                welcomeImageView.setImageResource(R.drawable.ic_placeholder);
             }
         } else {
-            welcomeImageView.setImageResource(R.mipmap.ic_launcher);
+            welcomeImageView.setImageResource(R.drawable.ic_placeholder);
         }
 
         routines = realm.where(Routine.class).equalTo("ownerId", currentUserUuid).sort("name").findAll();

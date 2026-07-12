@@ -76,7 +76,7 @@ public class UserAdapter extends RealmRecyclerViewAdapter<User, UserAdapter.View
                         .memoryPolicy(MemoryPolicy.NO_CACHE)
                         .into(holder.rowImage);
             } else {
-                holder.rowImage.setImageResource(R.mipmap.ic_launcher);
+                holder.rowImage.setImageResource(R.drawable.ic_placeholder);
             }
             // --------------------------------------------
 

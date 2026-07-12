@@ -71,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
         registerImage = findViewById(R.id.registerImage); // Added (Ensure this matches your layout XML layout ID)
 
         if (getIntent() != null && getIntent().hasExtra("EDIT_UUID")) {
-            headerText.setText("EDIT");
+            headerText.setText("Edit profile");
             editUuid = getIntent().getStringExtra("EDIT_UUID");
             User editUser = realm.where(User.class).equalTo("uuid", editUuid).findFirst();
             if (editUser != null) {

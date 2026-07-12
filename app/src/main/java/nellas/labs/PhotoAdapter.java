@@ -64,7 +64,7 @@ public class PhotoAdapter extends RealmRecyclerViewAdapter<ProgressPhoto, PhotoA
                         .memoryPolicy(MemoryPolicy.NO_CACHE)
                         .into(holder.cellPhotoImage);
             } else {
-                holder.cellPhotoImage.setImageResource(R.mipmap.ic_launcher);
+                holder.cellPhotoImage.setImageResource(R.drawable.ic_placeholder);
             }
 
             holder.cellPhotoDate.setText(dateFormat.format(photo.getDateCaptured()));

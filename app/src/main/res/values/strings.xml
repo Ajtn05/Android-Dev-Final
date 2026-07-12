@@ -1,4 +1,80 @@
 <resources>
     <string name="fileAuthority">nellas.labs</string>
     <string name="app_name">GainzTracker</string>
+
+    <!-- Screen titles -->
+    <string name="title_login">Log in</string>
+    <string name="title_register">Register</string>
+    <string name="title_routines">My routines</string>
+    <string name="title_users">Users</string>
+    <string name="title_records">Personal records</string>
+    <string name="title_history">Workout history</string>
+    <string name="title_photos">Progress photos</string>
+    <string name="title_workout">Workout</string>
+    <string name="title_new_routine">New routine</string>
+    <string name="title_capture">Capture photo</string>
+
+    <!-- Actions -->
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_admin">Admin</string>
+    <string name="action_clear">Clear</string>
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_new_routine">New routine</string>
+    <string name="action_add_exercise">Add exercise</string>
+    <string name="action_remove">Remove</string>
+    <string name="action_take_photo">Take photo</string>
+    <string name="action_finish_workout">Finish workout</string>
+    <string name="action_add_photo">Add photo</string>
+    <string name="action_compare">Compare</string>
+    <string name="action_sort_weight">Sort: Weight</string>
+    <string name="action_add_user">Add user</string>
+    <string name="action_clear_data">Clear data</string>
+
+    <!-- Bottom navigation -->
+    <string name="nav_routines">Routines</string>
+    <string name="nav_records">Records</string>
+    <string name="nav_history">History</string>
+    <string name="nav_photos">Photos</string>
+
+    <!-- Field hints -->
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm password</string>
+    <string name="hint_routine_name">Routine name (e.g. Push day)</string>
+    <string name="hint_target_focus">Target muscle groups (e.g. Chest/Tri)</string>
+    <string name="hint_exercise_name">Exercise name</string>
+    <string name="hint_weight">Weight</string>
+    <string name="hint_reps">Reps</string>
+    <string name="hint_sets">Sets</string>
+    <string name="hint_set_weight">Wt</string>
+    <string name="hint_session_notes">Session notes (optional)</string>
+    <string name="hint_bodyweight">Bodyweight (lbs)</string>
+    <string name="hint_notes">Notes</string>
+    <string name="hint_current_bodyweight">Current bodyweight (lbs)</string>
+    <string name="hint_pose_tag">Pose tag (e.g. Front flex)</string>
+    <string name="hint_notes_optional">Notes (optional)</string>
+
+    <!-- Labels -->
+    <string name="remember_me">Remember me</string>
+    <string name="welcome">Welcome</string>
+    <string name="label_exercises">Exercises</string>
+    <string name="label_no_bodyweight">No bodyweight logged yet</string>
+
+    <!-- Empty states -->
+    <string name="empty_routines">No routines yet.\nTap New routine to build your first workout.</string>
+    <string name="empty_records">No records yet.\nFinish a workout to set your first PR.</string>
+    <string name="empty_history">No workouts logged yet.\nStart a routine from the home screen.</string>
+    <string name="empty_photos">No progress photos yet.\nTap Add photo to capture your first one.</string>
+
+    <!-- Accessibility -->
+    <string name="cd_profile_photo">Profile photo</string>
+    <string name="cd_progress_photo">Progress photo</string>
+
+    <!-- Tooltips -->
+    <string name="tooltip_open_camera">Open camera</string>
+    <string name="tooltip_crop_image">Crop image</string>
+    <string name="tooltip_rotate_image">Rotate image</string>
 </resources>

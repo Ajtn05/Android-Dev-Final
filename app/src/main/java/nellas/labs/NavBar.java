@@ -31,6 +31,12 @@ public class NavBar {
 
         Button btnPics = activity.findViewById(R.id.btnNavPics);
         btnPics.setOnClickListener(navTo(activity, PhotosActivity.class, isHome));
+
+        // Highlight the tab for the screen currently shown.
+        btnRoutines.setSelected(isHome);
+        btnRecords.setSelected(activity instanceof RecordsActivity);
+        btnHistory.setSelected(activity instanceof HistoryActivity);
+        btnPics.setSelected(activity instanceof PhotosActivity);
     }
 
     private static View.OnClickListener navTo(final Activity activity, final Class<?> target, final boolean isHome) {

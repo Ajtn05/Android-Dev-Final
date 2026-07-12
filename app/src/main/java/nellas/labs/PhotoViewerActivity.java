@@ -137,7 +137,7 @@ public class PhotoViewerActivity extends AppCompatActivity {
                     .memoryPolicy(MemoryPolicy.NO_CACHE)
                     .into(target);
         } else {
-            target.setImageResource(R.mipmap.ic_launcher);
+            target.setImageResource(R.drawable.ic_placeholder);
         }
     }
 
@@ -197,7 +197,7 @@ public class PhotoViewerActivity extends AppCompatActivity {
         if (compareLayout.getVisibility() == View.VISIBLE) {
             compareLayout.setVisibility(View.GONE);
             viewerImage.setVisibility(View.VISIBLE);
-            btnCompare.setText("COMPARE");
+            btnCompare.setText("Compare");
             return;
         }
 
@@ -240,7 +240,7 @@ public class PhotoViewerActivity extends AppCompatActivity {
                         + " — " + formatNumber(other.getCurrentWeight()) + " lbs");
                 viewerImage.setVisibility(View.GONE);
                 compareLayout.setVisibility(View.VISIBLE);
-                btnCompare.setText("SINGLE");
+                btnCompare.setText("Single");
             }
         });
         builder.setNegativeButton("Cancel", null);
