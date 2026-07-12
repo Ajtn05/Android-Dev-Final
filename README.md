@@ -23,7 +23,7 @@ A gym workout & physique tracking Android app built with Java, Realm, and Recycl
 1. **Clone the repo**
    ```bash
    git clone https://github.com/Ajtn05/Android-Dev-Final.git
-   cd Lab4
+   cd Android-Dev-Final
    ```
 
 2. **Configure your SDK path**
