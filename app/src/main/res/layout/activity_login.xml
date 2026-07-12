@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    tools:layout_editor_absoluteX="-17dp"
+    tools:layout_editor_absoluteY="0dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:text="LOGIN"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="60dp"
+        android:text="User Name:"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Password:"
+        app:layout_constraintStart_toStartOf="@+id/usernameInput"
+        app:layout_constraintTop_toBottomOf="@+id/usernameInput" />
+
+    <EditText
+        android:id="@+id/usernameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:height="60dp"
+        android:ems="10"
+        android:hint="User Name"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:height="50dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember Me"
+        app:layout_constraintStart_toStartOf="@+id/passwordInput"
+        app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
+
+    <Button
+        android:id="@+id/signInButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:text="SIGNIN"
+        app:layout_constraintStart_toStartOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+    <Button
+        android:id="@+id/adminButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADMIN"
+        app:layout_constraintEnd_toEndOf="@+id/signInButton"
+        app:layout_constraintStart_toStartOf="@+id/signInButton"
+        app:layout_constraintTop_toBottomOf="@+id/signInButton" />
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CLEAR"
+        app:layout_constraintEnd_toEndOf="@+id/adminButton"
+        app:layout_constraintStart_toStartOf="@+id/adminButton"
+        app:layout_constraintTop_toBottomOf="@+id/adminButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

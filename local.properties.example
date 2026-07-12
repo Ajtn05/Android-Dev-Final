@@ -1,0 +1,11 @@
+# SETUP: Copy this file to local.properties and edit with your own SDK path
+# cp local.properties.example local.properties
+#
+# Then find your Android SDK path:
+# - On macOS: ~/Library/Android/Sdk
+# - On Windows: C:\Users\<username>\AppData\Local\Android\Sdk
+# - On Linux: ~/Android/Sdk
+#
+# You can also find it in Android Studio: Settings > SDK Manager > SDK Location
+
+sdk.dir=/path/to/your/Android/Sdk

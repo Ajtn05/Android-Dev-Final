@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/setLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/setWeightInput"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:hint="Wt"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/setRepsInput"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:hint="Reps"
+        android:inputType="number" />
+
+    <CheckBox
+        android:id="@+id/setCompletedCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

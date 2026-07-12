@@ -1,0 +1,43 @@
+# Gradle
+.gradle/
+build/
+gradle-app.setting
+.gradletasknamecache
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.DS_Store
+
+# Local configuration (SDK path, machine-specific)
+local.properties
+
+# Gradle wrapper jars (keep gradlew scripts)
+gradle/wrapper/gradle-wrapper.jar
+
+# Realm database files
+*.realm
+*.realm.lock
+*.realm.management
+
+# Compiled files
+*.class
+*.jar
+*.aar
+*.dex
+
+# Editor swap files
+*.swp
+*.swo
+*~
+
+# Claude Code (dev tool config, plans, hooks)
+.claude/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/exNameInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Exercise name"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btnRemoveExercise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            style="?android:attr/buttonStyleSmall" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/exWeightInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Weight"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/exRepsInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Reps"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/exSetsInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Sets"
+            android:inputType="number" />
+    </LinearLayout>
+</LinearLayout>

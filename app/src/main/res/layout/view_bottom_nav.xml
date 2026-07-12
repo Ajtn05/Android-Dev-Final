@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/btnNavRoutines"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Routines"
+        style="?android:attr/buttonStyleSmall" />
+
+    <Button
+        android:id="@+id/btnNavRecords"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Records"
+        style="?android:attr/buttonStyleSmall" />
+
+    <Button
+        android:id="@+id/btnNavHistory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="History"
+        style="?android:attr/buttonStyleSmall" />
+
+    <Button
+        android:id="@+id/btnNavPics"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Pics"
+        style="?android:attr/buttonStyleSmall" />
+</LinearLayout>
