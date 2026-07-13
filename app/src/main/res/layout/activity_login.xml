@@ -65,6 +65,14 @@
             android:layout_marginTop="@dimen/space_lg"
             android:text="@string/action_sign_in" />
 
+        <Button
+            android:id="@+id/signUpButton"
+            style="@style/App.Button.Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_sm"
+            android:text="@string/action_sign_up" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,12 +80,14 @@
             android:gravity="center"
             android:orientation="horizontal">
 
+            <!-- Admin entry hidden for now; kept wired for later re-enable. -->
             <Button
                 android:id="@+id/adminButton"
                 style="@style/App.Button.Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/action_admin" />
+                android:text="@string/action_admin"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/clearButton"

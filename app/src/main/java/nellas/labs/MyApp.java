@@ -14,6 +14,9 @@ public class MyApp extends Application {
                 .deleteRealmIfMigrationNeeded()
                 .build();
         Realm.setDefaultConfiguration(config);
+
+        // persistent storage for photos since it gets deleted sometimes
+        PhotoHelper.migrateCachedPhotos(this);
     }
 }
 

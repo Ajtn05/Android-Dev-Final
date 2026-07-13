@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
+//note, im leaving this here incase we'll need it at some point but rn it's not being used
 public class AdminActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
@@ -25,6 +26,7 @@ public class AdminActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //default stuffs
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_admin);

@@ -34,6 +34,7 @@ public class HomeActivity extends AppCompatActivity {
     private TextView welcomeText;
     private ImageView welcomeImageView;
     private TextView emptyText;
+    private TextView tapHint;
     private Button btnNewRoutine;
     private RecyclerView recyclerView;
 
@@ -41,6 +42,7 @@ public class HomeActivity extends AppCompatActivity {
     private RoutineAdapter adapter;
     private RealmResults<Routine> routines;
     private String currentUserUuid;
+    private boolean isRemembered = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,42 +60,21 @@ public class HomeActivity extends AppCompatActivity {
         welcomeText = findViewById(R.id.welcomeText);
         welcomeImageView = findViewById(R.id.welcomeImageView);
         emptyText = findViewById(R.id.emptyText);
+        tapHint = findViewById(R.id.tapHint);
         btnNewRoutine = findViewById(R.id.btnNewRoutine);
         recyclerView = findViewById(R.id.recyclerView);
 
         SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         currentUserUuid = sharedPreferences.getString(KEY_UUID, "");
 
-        User currentUser = realm.where(User.class).equalTo("uuid", currentUserUuid).findFirst();
-
-        boolean isRemembered = false;
         Intent intent = getIntent();
         if (intent != null) {
             isRemembered = intent.getBooleanExtra("IS_REMEMBERED", false);
         }
 
-        String displayName = (currentUser != null) ? currentUser.getName() : "Guest";
-        if (isRemembered) {
-            welcomeText.setText("Hello " + displayName);
-        } else {
-            welcomeText.setText("Hello");
-        }
+        refreshProfileHeader();
 
-        if (currentUser != null) {
-            File file = new File(getExternalCacheDir(), currentUser.getUuid() + ".jpeg");
-            if (file.exists()) {
-                Picasso.get()
-                        .load(file)
-                        .networkPolicy(NetworkPolicy.NO_CACHE)
-                        .memoryPolicy(MemoryPolicy.NO_CACHE)
-                        .into(welcomeImageView);
-            } else {
-                welcomeImageView.setImageResource(R.drawable.ic_placeholder);
-            }
-        } else {
-            welcomeImageView.setImageResource(R.drawable.ic_placeholder);
-        }
-
+        //fetches routines that match user info
         routines = realm.where(Routine.class).equalTo("ownerId", currentUserUuid).sort("name").findAll();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -108,6 +89,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        //button for starting new routine, opens routine edit chuchu
         btnNewRoutine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,16 +98,102 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        //lets you click on profile pic to edit profile
+        welcomeImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showProfileMenu();
+            }
+        });
+
         NavBar.wire(this);
     }
 
+    // edits greeting and picture
+    private void refreshProfileHeader() {
+        User currentUser = realm.where(User.class).equalTo("uuid", currentUserUuid).findFirst();
+
+        String displayName = (currentUser != null) ? currentUser.getName() : "Guest";
+        if (isRemembered) {
+            welcomeText.setText("Hello " + displayName);
+        } else {
+            welcomeText.setText("Hello");
+        }
+
+        if (currentUser != null) {
+            File file = new File(PhotoHelper.getPhotoDir(this), currentUser.getUuid() + ".jpeg");
+            if (file.exists()) {
+                Picasso.get()
+                        .load(file)
+                        .networkPolicy(NetworkPolicy.NO_CACHE)
+                        .memoryPolicy(MemoryPolicy.NO_CACHE)
+                        .into(welcomeImageView);
+            } else {
+                welcomeImageView.setImageResource(R.drawable.ic_placeholder);
+            }
+        } else {
+            welcomeImageView.setImageResource(R.drawable.ic_placeholder);
+        }
+    }
+
     private void updateEmptyState() {
-        emptyText.setVisibility(routines.isEmpty() ? View.VISIBLE : View.GONE);
+        boolean empty = routines.isEmpty();
+        emptyText.setVisibility(empty ? View.VISIBLE : View.GONE);
+        tapHint.setVisibility(empty ? View.GONE : View.VISIBLE);
+    }
+
+    //handles editing user info functionality
+    private void showProfileMenu() {
+        final User currentUser = realm.where(User.class).equalTo("uuid", currentUserUuid).findFirst();
+
+        //not my implementation so edit with care
+        androidx.appcompat.app.AlertDialog.Builder builder =
+                new androidx.appcompat.app.AlertDialog.Builder(this);
+        builder.setTitle(R.string.profile_options_title);
+
+        if (currentUser != null) {
+            String[] options = {
+                    getString(R.string.action_edit_profile),
+                    getString(R.string.action_sign_out)
+            };
+            builder.setItems(options, new android.content.DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(android.content.DialogInterface dialog, int which) {
+                    if (which == 0) {
+                        Intent intent = new Intent(HomeActivity.this, RegisterActivity.class);
+                        intent.putExtra("EDIT_UUID", currentUserUuid);
+                        startActivity(intent);
+                    } else {
+                        signOut();
+                    }
+                }
+            });
+        } else {
+            String[] options = { getString(R.string.action_sign_out) };
+            builder.setItems(options, new android.content.DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(android.content.DialogInterface dialog, int which) {
+                    signOut();
+                }
+            });
+        }
+        builder.show();
+    }
+
+    private void signOut() {
+        SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        sharedPreferences.edit().clear().apply();
+
+        Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        refreshProfileHeader();
         if (adapter != null) {
             adapter.notifyDataSetChanged();
         }

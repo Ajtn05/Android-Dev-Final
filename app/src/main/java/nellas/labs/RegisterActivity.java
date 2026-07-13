@@ -44,11 +44,13 @@ public class RegisterActivity extends AppCompatActivity {
     private String editUuid = null;
     private TextView headerText;
 
-    // Added fields
+    // new fields
     private ImageView registerImage;
     private byte[] rawJpegData = null;
     public static final int REQUEST_CODE_IMAGE_SCREEN = 101;
 
+
+    //this is from labs again
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,8 +81,8 @@ public class RegisterActivity extends AppCompatActivity {
                 registerPasswordInput.setText(editUser.getPassword());
                 confirmPasswordInput.setText(editUser.getPassword());
 
-                // Load existing photo if it exists
-                File file = new File(getExternalCacheDir(), editUuid + ".jpeg");
+                //load existing photo if it exists
+                File file = new File(PhotoHelper.getPhotoDir(this), editUuid + ".jpeg");
                 if (file.exists()) {
                     Picasso.get()
                             .load(file)
@@ -91,7 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         }
 
-        // Tap image view to open photo/crop screen
+        //tap image view to open photo/crop screen
         registerImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,7 +131,7 @@ public class RegisterActivity extends AppCompatActivity {
                         userToEdit.setName(username);
                         userToEdit.setPassword(password);
                     }
-                    // Validate distinct naming rule (excluding self)
+                    //validate distinct naming rule (excluding self)
                     User existingUser = realm.where(User.class).equalTo("name", username).findFirst();
                     if (existingUser != null && !existingUser.getUuid().equals(editUuid)) {
                         realm.cancelTransaction();
@@ -156,7 +158,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "New User saved. Total: " + totalUsers, Toast.LENGTH_SHORT).show();
                 }
 
-                // Save image file if a new image was taken
+                //save image file if a new image was taken
                 if (rawJpegData != null) {
                     try {
                         saveFile(rawJpegData, finalUuid + ".jpeg");
@@ -175,7 +177,8 @@ public class RegisterActivity extends AppCompatActivity {
                 finish();
             }
         });
-        // Replace your current registerImage.setOnClickListener with this updated logic:
+
+        //hopefully fixes permissions problem
         registerImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -219,7 +222,7 @@ public class RegisterActivity extends AppCompatActivity {
         if (requestCode == REQUEST_CODE_IMAGE_SCREEN && resultCode == ImageActivity.RESULT_CODE_IMAGE_TAKEN) {
             if (data != null && data.hasExtra("rawJpeg")) {
                 rawJpegData = data.getByteArrayExtra("rawJpeg");
-                // Update presentation thumbnail immediately
+                //update presentation thumbnail immediately
                 Bitmap bitmap = BitmapFactory.decodeByteArray(rawJpegData, 0, rawJpegData.length);
                 registerImage.setImageBitmap(bitmap);
             }
@@ -227,7 +230,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private File saveFile(byte[] jpeg, String filename) throws IOException {
-        File getImageDir = getExternalCacheDir();
+        File getImageDir = PhotoHelper.getPhotoDir(this);
         File savedImage = new File(getImageDir, filename);
         FileOutputStream fos = new FileOutputStream(savedImage);
         fos.write(jpeg);
