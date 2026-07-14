@@ -24,7 +24,7 @@
         android:id="@+id/welcomeText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="@dimen/space_row"
         android:layout_marginEnd="@dimen/space_md"
         android:text="@string/welcome"
         android:textAppearance="@style/App.Text.Title"

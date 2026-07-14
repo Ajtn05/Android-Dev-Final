@@ -99,7 +99,7 @@ public class RecordsActivity extends AppCompatActivity {
             }
         });
 
-        NavBar.wire(this);
+        NavBar.wire(this, currentUserUuid);
     }
 
     // get PR

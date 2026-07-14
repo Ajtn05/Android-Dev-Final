@@ -117,7 +117,7 @@ public class PhotosActivity extends AppCompatActivity {
             }
         });
 
-        NavBar.wire(this);
+        NavBar.wire(this, currentUserUuid);
     }
 
     @Override

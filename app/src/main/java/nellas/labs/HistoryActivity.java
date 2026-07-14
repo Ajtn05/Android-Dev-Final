@@ -68,7 +68,7 @@ public class HistoryActivity extends AppCompatActivity {
         });
 
         //inserts navbar class into screen
-        NavBar.wire(this);
+        NavBar.wire(this, currentUserUuid);
     }
 
     private void updateEmptyState() {

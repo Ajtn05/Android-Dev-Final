@@ -106,7 +106,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        NavBar.wire(this);
+        NavBar.wire(this, currentUserUuid);
     }
 
     // edits greeting and picture

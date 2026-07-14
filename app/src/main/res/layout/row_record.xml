@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/space_md"
-        android:paddingVertical="12dp">
+        android:paddingVertical="@dimen/space_row">
 
         <TextView
             android:id="@+id/rowRecordName"
