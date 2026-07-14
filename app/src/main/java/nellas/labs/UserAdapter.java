@@ -66,7 +66,7 @@ public class UserAdapter extends RealmRecyclerViewAdapter<User, UserAdapter.View
             holder.rowPassword.setText(u.getPassword());
 
             // --- Picasso Image Loading Implementation ---
-            File getImageDir = activity.getExternalCacheDir();
+            File getImageDir = PhotoHelper.getPhotoDir(activity);
             File file = new File(getImageDir, u.getUuid() + ".jpeg");
 
             if (file.exists()) {
@@ -109,7 +109,7 @@ public class UserAdapter extends RealmRecyclerViewAdapter<User, UserAdapter.View
                             if (toDelete != null) {
                                 toDelete.deleteFromRealm();
                                 // Optional: Delete local file associated with the user uuid
-                                File imgFile = new File(activity.getExternalCacheDir(), uuid + ".jpeg");
+                                File imgFile = new File(PhotoHelper.getPhotoDir(activity), uuid + ".jpeg");
                                 if (imgFile.exists()) imgFile.delete();
                             }
                             realm.commitTransaction();

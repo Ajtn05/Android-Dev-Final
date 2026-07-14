@@ -86,6 +86,7 @@ public class PhotosActivity extends AppCompatActivity {
         });
 
         btnAddPhoto.setOnClickListener(new View.OnClickListener() {
+            //checks permissions lang before adding
             @Override
             public void onClick(View v) {
                 List<String> permissionsList = new ArrayList<>();

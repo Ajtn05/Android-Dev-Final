@@ -22,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText usernameInput;
     private EditText passwordInput;
     private Button signInButton;
+    private Button signUpButton;
     private Button adminButton;
     private Button clearButton;
     private CheckBox checkBox;
@@ -32,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private Realm realm;
 
+    //dead ass can't lie, copied from labs because it works
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         usernameInput = findViewById(R.id.usernameInput);
         passwordInput = findViewById(R.id.passwordInput);
         signInButton = findViewById(R.id.signInButton);
+        signUpButton = findViewById(R.id.signUpButton);
         adminButton = findViewById(R.id.adminButton);
         clearButton = findViewById(R.id.clearButton);
         checkBox = findViewById(R.id.checkBox);
@@ -103,6 +106,16 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        signUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // No EDIT_UUID -> RegisterActivity runs in create mode.
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //note admin functionality is hidden for the moment
         adminButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

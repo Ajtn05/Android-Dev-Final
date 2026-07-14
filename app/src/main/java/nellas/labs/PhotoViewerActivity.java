@@ -129,7 +129,7 @@ public class PhotoViewerActivity extends AppCompatActivity {
     }
 
     private void loadInto(ProgressPhoto photo, ImageView target) {
-        File file = new File(getExternalCacheDir(), photo.getPhotoPath());
+        File file = new File(PhotoHelper.getPhotoDir(this), photo.getPhotoPath());
         if (file.exists()) {
             Picasso.get()
                     .load(file)
@@ -177,7 +177,7 @@ public class PhotoViewerActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 ProgressPhoto photo = findPhoto();
                 if (photo != null) {
-                    File imgFile = new File(getExternalCacheDir(), photo.getPhotoPath());
+                    File imgFile = new File(PhotoHelper.getPhotoDir(PhotoViewerActivity.this), photo.getPhotoPath());
                     if (imgFile.exists()) {
                         imgFile.delete();
                     }
@@ -234,6 +234,7 @@ public class PhotoViewerActivity extends AppCompatActivity {
                 }
                 loadInto(photo, compareImageA);
                 loadInto(other, compareImageB);
+                //can change to kilos but we all want to say we bench 225
                 compareLabelA.setText(dateFormat.format(photo.getDateCaptured())
                         + " — " + formatNumber(photo.getCurrentWeight()) + " lbs");
                 compareLabelB.setText(dateFormat.format(other.getDateCaptured())

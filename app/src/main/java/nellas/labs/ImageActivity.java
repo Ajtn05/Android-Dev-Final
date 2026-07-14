@@ -38,6 +38,7 @@ public class ImageActivity extends AppCompatActivity
 
 
 
+    //copied from Sir Jongko's sample, XML edited to adhere to style though
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

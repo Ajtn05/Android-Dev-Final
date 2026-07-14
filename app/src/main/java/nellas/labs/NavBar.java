@@ -10,6 +10,7 @@ import android.widget.Button;
 // the back stack always leads straight back to Home.
 public class NavBar {
 
+
     public static void wire(final Activity activity) {
         final boolean isHome = activity instanceof HomeActivity;
 
@@ -32,13 +33,14 @@ public class NavBar {
         Button btnPics = activity.findViewById(R.id.btnNavPics);
         btnPics.setOnClickListener(navTo(activity, PhotosActivity.class, isHome));
 
-        // Highlight the tab for the screen currently shown.
+        // highlight the tab for the screen currently shown.
         btnRoutines.setSelected(isHome);
         btnRecords.setSelected(activity instanceof RecordsActivity);
         btnHistory.setSelected(activity instanceof HistoryActivity);
         btnPics.setSelected(activity instanceof PhotosActivity);
     }
 
+    //usual intent implementation but if-elsed to avoid duplication
     private static View.OnClickListener navTo(final Activity activity, final Class<?> target, final boolean isHome) {
         return new View.OnClickListener() {
             @Override

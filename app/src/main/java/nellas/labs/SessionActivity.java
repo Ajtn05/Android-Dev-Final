@@ -46,6 +46,7 @@ public class SessionActivity extends AppCompatActivity {
     }
 
     private TextView sessionHeader;
+    //clock
     private Chronometer chronometer;
     private EditText notesInput;
     private Button btnTakePhoto;

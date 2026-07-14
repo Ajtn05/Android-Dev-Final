@@ -49,6 +49,7 @@ public class HistoryActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         String currentUserUuid = sharedPreferences.getString(KEY_UUID, "");
 
+        //gets workouts from realm that match user info, sorted chrnonologically
         logs = realm.where(WorkoutLog.class)
                 .equalTo("ownerId", currentUserUuid)
                 .sort("dateCompleted", Sort.DESCENDING)
@@ -66,6 +67,7 @@ public class HistoryActivity extends AppCompatActivity {
             }
         });
 
+        //inserts navbar class into screen
         NavBar.wire(this);
     }
 

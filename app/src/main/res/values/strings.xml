@@ -16,6 +16,7 @@
 
     <!-- Actions -->
     <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_up">Sign up</string>
     <string name="action_admin">Admin</string>
     <string name="action_clear">Clear</string>
     <string name="action_save">Save</string>
@@ -32,6 +33,8 @@
     <string name="action_sort_weight">Sort: Weight</string>
     <string name="action_add_user">Add user</string>
     <string name="action_clear_data">Clear data</string>
+    <string name="action_sign_out">Sign out</string>
+    <string name="action_edit_profile">Edit profile</string>
 
     <!-- Bottom navigation -->
     <string name="nav_routines">Routines</string>
@@ -62,6 +65,8 @@
     <string name="welcome">Welcome</string>
     <string name="label_exercises">Exercises</string>
     <string name="label_no_bodyweight">No bodyweight logged yet</string>
+    <string name="hint_tap_routine">Tap a routine to start a workout</string>
+    <string name="profile_options_title">Profile</string>
 
     <!-- Empty states -->
     <string name="empty_routines">No routines yet.\nTap New routine to build your first workout.</string>

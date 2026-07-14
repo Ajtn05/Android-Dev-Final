@@ -52,7 +52,7 @@ public class SessionSetAdapter extends RecyclerView.Adapter<SessionSetAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final SessionActivity.SetEntry entry = entries.get(position);
 
-        // Detach old listeners before re-binding so recycled rows don't write to the wrong entry
+        //detach old listeners before re-binding so recycled rows don't write to the wrong entry
         if (holder.weightWatcher != null) {
             holder.setWeightInput.removeTextChangedListener(holder.weightWatcher);
         }

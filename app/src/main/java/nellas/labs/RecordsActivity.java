@@ -82,6 +82,7 @@ public class RecordsActivity extends AppCompatActivity {
 
         emptyText.setVisibility(records.isEmpty() ? View.VISIBLE : View.GONE);
 
+        //lets you sort based on preference. uses sortMode variable ah
         btnSortToggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,7 +102,7 @@ public class RecordsActivity extends AppCompatActivity {
         NavBar.wire(this);
     }
 
-    // Max weight per exercise across all completed sets of this user's workouts.
+    // get PR
     private void buildRecords() {
         records.clear();
         Map<String, RecordEntry> best = new HashMap<>();
@@ -157,7 +158,7 @@ public class RecordsActivity extends AppCompatActivity {
         }
     }
 
-    // Called by RecordAdapter when a record row is tapped.
+    //called by RecordAdapter when a record row is tapped.
     public void showSourceWorkout(RecordEntry entry) {
         WorkoutLog log = realm.where(WorkoutLog.class)
                 .equalTo("ownerId", currentUserUuid)

@@ -23,6 +23,7 @@ import io.realm.RealmRecyclerViewAdapter;
 
 public class PhotoAdapter extends RealmRecyclerViewAdapter<ProgressPhoto, PhotoAdapter.ViewHolder> {
 
+    //still from labs
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView cellPhotoImage;
         TextView cellPhotoDate;
@@ -56,7 +57,7 @@ public class PhotoAdapter extends RealmRecyclerViewAdapter<ProgressPhoto, PhotoA
         if (photo != null) {
             final String photoId = photo.getId();
 
-            File file = new File(activity.getExternalCacheDir(), photo.getPhotoPath());
+            File file = new File(PhotoHelper.getPhotoDir(activity), photo.getPhotoPath());
             if (file.exists()) {
                 Picasso.get()
                         .load(file)
