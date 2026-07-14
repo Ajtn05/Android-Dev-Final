@@ -1,50 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:paddingHorizontal="@dimen/space_md"
-    android:paddingVertical="12dp"
-    android:background="?android:attr/selectableItemBackground"
-    android:gravity="center_vertical">
+    android:layout_margin="@dimen/space_md"
+    app:cardCornerRadius="12dp"
+    app:cardBackgroundColor="?attr/colorSurfaceContainer"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/space_md"
+        android:paddingVertical="12dp"
+        android:gravity="center_vertical">
 
-        <TextView
-            android:id="@+id/rowRoutineName"
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/rowRoutineName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/App.Text.Title" />
+
+            <TextView
+                android:id="@+id/rowFocus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/App.Text.Secondary" />
+
+            <TextView
+                android:id="@+id/rowLastTracked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/App.Text.Caption" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnEdit"
+            style="@style/App.Button.Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/App.Text.Title" />
+            android:text="@string/action_edit" />
 
-        <TextView
-            android:id="@+id/rowFocus"
+        <Button
+            android:id="@+id/btnDelete"
+            style="@style/App.Button.Text.Destructive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/App.Text.Secondary" />
-
-        <TextView
-            android:id="@+id/rowLastTracked"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/App.Text.Caption" />
+            android:layout_marginStart="@dimen/space_xs"
+            android:text="@string/action_delete" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btnEdit"
-        style="@style/App.Button.Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/action_edit" />
-
-    <Button
-        android:id="@+id/btnDelete"
-        style="@style/App.Button.Text.Destructive"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/space_xs"
-        android:text="@string/action_delete" />
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>
