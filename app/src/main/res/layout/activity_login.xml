@@ -118,7 +118,6 @@
                 style="@style/App.Button.Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/space_sm"
                 android:text="@string/action_clear" />
         </LinearLayout>
     </LinearLayout>

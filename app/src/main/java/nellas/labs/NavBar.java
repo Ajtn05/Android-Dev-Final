@@ -23,6 +23,7 @@ public class NavBar {
             if (id == R.id.nav_routines) {
                 if (!isHome) {
                     activity.finish();
+                    activity.overridePendingTransition(0, 0);
                 }
                 return true;
             }
@@ -42,6 +43,7 @@ public class NavBar {
                 Intent intent = new Intent(activity, target);
                 intent.putExtra(EXTRA_OWNER_ID, ownerId);
                 activity.startActivity(intent);
+                activity.overridePendingTransition(0, 0);
                 if (!isHome) {
                     activity.finish();
                 }
