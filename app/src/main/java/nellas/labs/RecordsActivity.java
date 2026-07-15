@@ -90,11 +90,11 @@ public class RecordsActivity extends AppCompatActivity {
                 applySort();
                 adapter.notifyDataSetChanged();
                 if (sortMode == 0) {
-                    btnSortToggle.setText("Sort: Weight");
+                    btnSortToggle.setText(getString(R.string.action_sort_weight));
                 } else if (sortMode == 1) {
-                    btnSortToggle.setText("Sort: A-Z");
+                    btnSortToggle.setText(getString(R.string.action_sort_az));
                 } else {
-                    btnSortToggle.setText("Sort: Date");
+                    btnSortToggle.setText(getString(R.string.action_sort_date));
                 }
             }
         });

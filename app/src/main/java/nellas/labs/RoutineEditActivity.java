@@ -67,7 +67,7 @@ public class RoutineEditActivity extends AppCompatActivity {
                     .equalTo("id", editRoutineId)
                     .findFirst();
             if (editRoutine != null) {
-                headerText.setText("Edit routine");
+                headerText.setText(getString(R.string.title_edit_routine));
                 routineNameInput.setText(editRoutine.getName());
                 targetFocusInput.setText(editRoutine.getTargetFocus());
                 for (Exercise ex : editRoutine.getExercises()) {

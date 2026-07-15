@@ -94,7 +94,7 @@ public class PhotoViewerActivity extends AppCompatActivity {
         }
 
         viewerDate.setText(dateFormat.format(photo.getDateCaptured()));
-        viewerPose.setText("Pose: " + photo.getPoseTag());
+        viewerPose.setText(getString(R.string.label_pose) + " " + photo.getPoseTag());
         viewerWeightInput.setText(formatNumber(photo.getCurrentWeight()));
         viewerNotesInput.setText(photo.getNotes());
         loadInto(photo, viewerImage);
@@ -197,7 +197,7 @@ public class PhotoViewerActivity extends AppCompatActivity {
         if (compareLayout.getVisibility() == View.VISIBLE) {
             compareLayout.setVisibility(View.GONE);
             viewerImage.setVisibility(View.VISIBLE);
-            btnCompare.setText("Compare");
+            btnCompare.setText(getString(R.string.action_compare));
             return;
         }
 
@@ -241,7 +241,7 @@ public class PhotoViewerActivity extends AppCompatActivity {
                         + " — " + formatNumber(other.getCurrentWeight()) + " lbs");
                 viewerImage.setVisibility(View.GONE);
                 compareLayout.setVisibility(View.VISIBLE);
-                btnCompare.setText("Single");
+                btnCompare.setText(getString(R.string.action_single));
             }
         });
         builder.setNegativeButton("Cancel", null);

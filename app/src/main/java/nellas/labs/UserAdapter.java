@@ -44,10 +44,10 @@ public class UserAdapter extends RealmRecyclerViewAdapter<User, UserAdapter.View
     private AdminActivity activity;
     private Realm realm;
 
-    public UserAdapter(AdminActivity activity, @Nullable OrderedRealmCollection<User> data, boolean autoUpdate) {
+    public UserAdapter(AdminActivity activity, @Nullable OrderedRealmCollection<User> data, boolean autoUpdate, Realm realm) {
         super(data, autoUpdate);
         this.activity = activity;
-        this.realm = Realm.getDefaultInstance();
+        this.realm = realm;
     }
 
     @NonNull

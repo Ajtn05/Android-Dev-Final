@@ -73,7 +73,7 @@ public class RegisterActivity extends AppCompatActivity {
         registerImage = findViewById(R.id.registerImage); // Added (Ensure this matches your layout XML layout ID)
 
         if (getIntent() != null && getIntent().hasExtra("EDIT_UUID")) {
-            headerText.setText("Edit profile");
+            headerText.setText(getString(R.string.action_edit_profile));
             editUuid = getIntent().getStringExtra("EDIT_UUID");
             User editUser = realm.where(User.class).equalTo("uuid", editUuid).findFirst();
             if (editUser != null) {
@@ -92,15 +92,6 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         }
-
-        //tap image view to open photo/crop screen
-        registerImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(RegisterActivity.this, ImageActivity.class);
-                startActivityForResult(intent, REQUEST_CODE_IMAGE_SCREEN);
-            }
-        });
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override

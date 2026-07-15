@@ -115,9 +115,9 @@ public class HomeActivity extends AppCompatActivity {
 
         String displayName = (currentUser != null) ? currentUser.getName() : "Guest";
         if (isRemembered) {
-            welcomeText.setText("Hello " + displayName);
+            welcomeText.setText(getString(R.string.label_hello) + " " + displayName);
         } else {
-            welcomeText.setText("Hello");
+            welcomeText.setText(getString(R.string.label_hello));
         }
 
         if (currentUser != null) {

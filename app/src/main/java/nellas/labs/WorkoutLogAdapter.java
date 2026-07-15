@@ -61,7 +61,8 @@ public class WorkoutLogAdapter extends RealmRecyclerViewAdapter<WorkoutLog, Work
 
             holder.rowLogRoutine.setText(log.getRoutineName());
             holder.rowLogDate.setText(dateFormat.format(log.getDateCompleted()));
-            holder.rowLogVolume.setText("Total volume: " + formatNumber(log.getTotalVolume()) + " lbs");
+            holder.rowLogVolume.setText(activity.getString(R.string.label_total_volume) + " "
+                    + formatNumber(log.getTotalVolume()) + " " + activity.getString(R.string.unit_lbs));
             String notes = log.getNotes();
             holder.rowLogNotes.setText((notes == null || notes.isEmpty()) ? "" : "Notes: " + notes);
 

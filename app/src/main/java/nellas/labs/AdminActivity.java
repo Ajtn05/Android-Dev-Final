@@ -44,7 +44,7 @@ public class AdminActivity extends AppCompatActivity {
         users = realm.where(User.class).findAll();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new UserAdapter(this, users, true);
+        adapter = new UserAdapter(this, users, true, realm);
         recyclerView.setAdapter(adapter);
 
         btnAddUser.setOnClickListener(new View.OnClickListener() {

@@ -1,5 +1,4 @@
 <resources>
-    <string name="fileAuthority">nellas.labs</string>
     <string name="app_name">GainzTracker</string>
 
     <!-- Screen titles -->
@@ -12,6 +11,7 @@
     <string name="title_photos">Progress photos</string>
     <string name="title_workout">Workout</string>
     <string name="title_new_routine">New routine</string>
+    <string name="title_edit_routine">Edit routine</string>
     <string name="title_capture">Capture photo</string>
 
     <!-- Actions -->
@@ -30,7 +30,10 @@
     <string name="action_finish_workout">Finish workout</string>
     <string name="action_add_photo">Add photo</string>
     <string name="action_compare">Compare</string>
+    <string name="action_single">Single</string>
     <string name="action_sort_weight">Sort: Weight</string>
+    <string name="action_sort_az">Sort: A-Z</string>
+    <string name="action_sort_date">Sort: Date</string>
     <string name="action_add_user">Add user</string>
     <string name="action_clear_data">Clear data</string>
     <string name="action_sign_out">Sign out</string>
@@ -63,8 +66,13 @@
     <!-- Labels -->
     <string name="remember_me">Remember me</string>
     <string name="welcome">Welcome</string>
+    <string name="label_hello">Hello</string>
     <string name="label_exercises">Exercises</string>
     <string name="label_no_bodyweight">No bodyweight logged yet</string>
+    <string name="label_latest_bodyweight">Latest bodyweight:</string>
+    <string name="label_pose">Pose:</string>
+    <string name="label_total_volume">Total volume:</string>
+    <string name="unit_lbs">lbs</string>
     <string name="hint_tap_routine">Tap a routine to start a workout</string>
     <string name="profile_options_title">Profile</string>
 

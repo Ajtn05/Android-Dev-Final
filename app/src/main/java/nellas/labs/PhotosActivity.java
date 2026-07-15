@@ -141,9 +141,10 @@ public class PhotosActivity extends AppCompatActivity {
                 .sort("dateCaptured", Sort.DESCENDING)
                 .findFirst();
         if (latest != null) {
-            latestWeightText.setText("Latest bodyweight: " + formatNumber(latest.getCurrentWeight()) + " lbs");
+            latestWeightText.setText(getString(R.string.label_latest_bodyweight) + " "
+                    + formatNumber(latest.getCurrentWeight()) + " " + getString(R.string.unit_lbs));
         } else {
-            latestWeightText.setText("No bodyweight logged yet");
+            latestWeightText.setText(getString(R.string.label_no_bodyweight));
         }
     }
 
