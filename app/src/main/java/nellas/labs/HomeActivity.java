@@ -197,6 +197,7 @@ public class HomeActivity extends AppCompatActivity {
         if (adapter != null) {
             adapter.notifyDataSetChanged();
         }
+        NavBar.refresh(this);
     }
 
     @Override

@@ -76,6 +76,12 @@ public class HistoryActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        NavBar.refresh(this);
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         if (realm != null && !realm.isClosed()) {

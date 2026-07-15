@@ -19,7 +19,9 @@ public class NavBar {
             @Override
             public void onClick(View v) {
                 if (!isHome) {
-                    activity.finish();
+                    Intent intent = new Intent(activity, HomeActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    activity.startActivity(intent);
                 }
             }
         });
@@ -33,8 +35,17 @@ public class NavBar {
         Button btnPics = activity.findViewById(R.id.btnNavPics);
         btnPics.setOnClickListener(navTo(activity, PhotosActivity.class, isHome));
 
-        // highlight the tab for the screen currently shown.
-        btnRoutines.setSelected(isHome);
+        refresh(activity);
+    }
+
+    // highlight the tab for the screen currently shown.
+    public static void refresh(Activity activity) {
+        Button btnRoutines = activity.findViewById(R.id.btnNavRoutines);
+        Button btnRecords = activity.findViewById(R.id.btnNavRecords);
+        Button btnHistory = activity.findViewById(R.id.btnNavHistory);
+        Button btnPics = activity.findViewById(R.id.btnNavPics);
+
+        btnRoutines.setSelected(activity instanceof HomeActivity);
         btnRecords.setSelected(activity instanceof RecordsActivity);
         btnHistory.setSelected(activity instanceof HistoryActivity);
         btnPics.setSelected(activity instanceof PhotosActivity);
@@ -48,7 +59,9 @@ public class NavBar {
                 if (activity.getClass().equals(target)) {
                     return;
                 }
-                activity.startActivity(new Intent(activity, target));
+                Intent intent = new Intent(activity, target);
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                activity.startActivity(intent);
                 if (!isHome) {
                     activity.finish();
                 }

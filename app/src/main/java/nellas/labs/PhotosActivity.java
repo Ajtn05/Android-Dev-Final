@@ -161,6 +161,7 @@ public class PhotosActivity extends AppCompatActivity {
             adapter.notifyDataSetChanged();
         }
         updateLatestWeight();
+        NavBar.refresh(this);
     }
 
     @Override
