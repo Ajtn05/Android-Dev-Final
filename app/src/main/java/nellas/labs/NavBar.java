@@ -2,70 +2,67 @@ package nellas.labs;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.view.View;
-import android.widget.Button;
 
-// Wires the shared Routines | Records | History | Pics button bar.
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+// Wires the shared Routines | Records | History | Photos bottom nav bar.
 // Home is the hub: other screens finish themselves when navigating so
 // the back stack always leads straight back to Home.
 public class NavBar {
 
+    public static final String EXTRA_OWNER_ID = "EXTRA_OWNER_ID";
 
-    public static void wire(final Activity activity) {
+    public static void wire(final Activity activity, final String ownerId) {
         final boolean isHome = activity instanceof HomeActivity;
 
-        Button btnRoutines = activity.findViewById(R.id.btnNavRoutines);
-        btnRoutines.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        BottomNavigationView bottomNav = activity.findViewById(R.id.bottomNav);
+
+        bottomNav.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+
+            if (id == R.id.nav_routines) {
                 if (!isHome) {
-                    Intent intent = new Intent(activity, HomeActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    activity.startActivity(intent);
+                    activity.finish();
+                }
+                return true;
+            }
+
+            Class<?> target;
+            if (id == R.id.nav_records) {
+                target = RecordsActivity.class;
+            } else if (id == R.id.nav_history) {
+                target = HistoryActivity.class;
+            } else if (id == R.id.nav_photos) {
+                target = PhotosActivity.class;
+            } else {
+                return false;
+            }
+
+            if (!activity.getClass().equals(target)) {
+                Intent intent = new Intent(activity, target);
+                intent.putExtra(EXTRA_OWNER_ID, ownerId);
+                activity.startActivity(intent);
+                if (!isHome) {
+                    activity.finish();
                 }
             }
+            return true;
         });
-
-        Button btnRecords = activity.findViewById(R.id.btnNavRecords);
-        btnRecords.setOnClickListener(navTo(activity, RecordsActivity.class, isHome));
-
-        Button btnHistory = activity.findViewById(R.id.btnNavHistory);
-        btnHistory.setOnClickListener(navTo(activity, HistoryActivity.class, isHome));
-
-        Button btnPics = activity.findViewById(R.id.btnNavPics);
-        btnPics.setOnClickListener(navTo(activity, PhotosActivity.class, isHome));
 
         refresh(activity);
     }
 
     // highlight the tab for the screen currently shown.
     public static void refresh(Activity activity) {
-        Button btnRoutines = activity.findViewById(R.id.btnNavRoutines);
-        Button btnRecords = activity.findViewById(R.id.btnNavRecords);
-        Button btnHistory = activity.findViewById(R.id.btnNavHistory);
-        Button btnPics = activity.findViewById(R.id.btnNavPics);
-
-        btnRoutines.setSelected(activity instanceof HomeActivity);
-        btnRecords.setSelected(activity instanceof RecordsActivity);
-        btnHistory.setSelected(activity instanceof HistoryActivity);
-        btnPics.setSelected(activity instanceof PhotosActivity);
-    }
-
-    //usual intent implementation but if-elsed to avoid duplication
-    private static View.OnClickListener navTo(final Activity activity, final Class<?> target, final boolean isHome) {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (activity.getClass().equals(target)) {
-                    return;
-                }
-                Intent intent = new Intent(activity, target);
-                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                activity.startActivity(intent);
-                if (!isHome) {
-                    activity.finish();
-                }
-            }
-        };
+        BottomNavigationView bottomNav = activity.findViewById(R.id.bottomNav);
+        if (activity instanceof HomeActivity) {
+            bottomNav.setSelectedItemId(R.id.nav_routines);
+        } else if (activity instanceof RecordsActivity) {
+            bottomNav.setSelectedItemId(R.id.nav_records);
+        } else if (activity instanceof HistoryActivity) {
+            bottomNav.setSelectedItemId(R.id.nav_history);
+        } else if (activity instanceof PhotosActivity) {
+            bottomNav.setSelectedItemId(R.id.nav_photos);
+        }
     }
 }

@@ -83,6 +83,7 @@
     <string name="empty_photos">No progress photos yet.\nTap Add photo to capture your first one.</string>
 
     <!-- Accessibility -->
+    <string name="cd_app_logo">App logo</string>
     <string name="cd_profile_photo">Profile photo</string>
     <string name="cd_progress_photo">Progress photo</string>
 

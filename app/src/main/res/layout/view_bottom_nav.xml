@@ -1,39 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.bottomnavigation.BottomNavigationView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:paddingVertical="@dimen/space_xs">
-
-    <Button
-        android:id="@+id/btnNavRoutines"
-        style="@style/App.Button.Nav"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/nav_routines" />
-
-    <Button
-        android:id="@+id/btnNavRecords"
-        style="@style/App.Button.Nav"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/nav_records" />
-
-    <Button
-        android:id="@+id/btnNavHistory"
-        style="@style/App.Button.Nav"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/nav_history" />
-
-    <Button
-        android:id="@+id/btnNavPics"
-        style="@style/App.Button.Nav"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/nav_photos" />
-</LinearLayout>
+    app:menu="@menu/bottom_nav_menu" />

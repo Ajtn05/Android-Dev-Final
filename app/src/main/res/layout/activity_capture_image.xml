@@ -53,7 +53,7 @@
                     android:layout_margin="@dimen/space_sm"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:contentDescription="@string/tooltip_open_camera"
-                    android:src="@android:drawable/ic_menu_camera"
+                    android:src="@drawable/ic_camera"
                     android:tooltipText="@string/tooltip_open_camera"
                     app:tint="?attr/colorOnSurfaceVariant" />
 
@@ -64,7 +64,7 @@
                     android:layout_margin="@dimen/space_sm"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:contentDescription="@string/tooltip_crop_image"
-                    android:src="@android:drawable/ic_menu_crop"
+                    android:src="@drawable/ic_crop"
                     android:tooltipText="@string/tooltip_crop_image"
                     app:tint="?attr/colorOnSurfaceVariant" />
 
@@ -75,7 +75,7 @@
                     android:layout_margin="@dimen/space_sm"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:contentDescription="@string/tooltip_rotate_image"
-                    android:src="@android:drawable/ic_menu_rotate"
+                    android:src="@drawable/ic_rotate"
                     android:tooltipText="@string/tooltip_rotate_image"
                     app:tint="?attr/colorOnSurfaceVariant" />
             </LinearLayout>
