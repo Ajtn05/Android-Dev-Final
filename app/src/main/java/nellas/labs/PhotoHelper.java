@@ -18,24 +18,19 @@ import java.util.UUID;
 import io.realm.Realm;
 
 
-// NOTE: usefulness of this file is questionable. from what i know, atm photos are in unsafe location so
-// android can sometimes delete it. this is to keep persistent storage but it is beyond our class scope
-// so also edit with caution
+// using this because photos are not retained per session
 
 // Shared save path for progress photos: write the cropped JPEG to persistent
 // app storage, then collect bodyweight/pose/notes before creating the ProgressPhoto.
 public class PhotoHelper {
 
-    // Persistent per-app storage that survives cache clears and low-storage
-    // cleanups (only removed on uninstall). Profile and progress photos live here
-    // so they don't silently disappear the way getExternalCacheDir() files can.
+    // persistent per-app storage so that photos don't disappear the way getExternalCacheDir() files can.
     public static File getPhotoDir(Context context) {
         File dir = context.getExternalFilesDir(null);
         return dir != null ? dir : context.getFilesDir();
     }
 
-    // One-time move of any photos left in the old external cache dir into the
-    // persistent files dir, so images captured by earlier builds aren't lost.
+    // migrate existing photos
     public static void migrateCachedPhotos(Context context) {
         File cacheDir = context.getExternalCacheDir();
         File filesDir = getPhotoDir(context);
@@ -90,7 +85,7 @@ public class PhotoHelper {
         final AlertDialog dialog = builder.create();
         dialog.show();
 
-        // Positive button set manually so invalid input keeps the dialog open
+        // positive button set manually so invalid input keeps the dialog open
         dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

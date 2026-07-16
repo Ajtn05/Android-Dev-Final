@@ -138,7 +138,6 @@ public class RoutineEditActivity extends AppCompatActivity {
             return;
         }
 
-        // Validate every exercise row before touching Realm
         int rowCount = exerciseContainer.getChildCount();
         String[] exNames = new String[rowCount];
         double[] exWeights = new double[rowCount];
@@ -172,7 +171,6 @@ public class RoutineEditActivity extends AppCompatActivity {
             }
         }
 
-        // Duplicate routine name for this user (excluding the routine being edited)
         Routine existingRoutine = realm.where(Routine.class)
                 .equalTo("ownerId", currentUserUuid)
                 .equalTo("name", name)

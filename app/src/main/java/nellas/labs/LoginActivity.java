@@ -109,13 +109,12 @@ public class LoginActivity extends AppCompatActivity {
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // No EDIT_UUID -> RegisterActivity runs in create mode.
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });
 
-        //note admin functionality is hidden for the moment
+        //note admin functionality is hidden for the moment (dev use lang)
         adminButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

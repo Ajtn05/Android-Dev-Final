@@ -173,27 +173,24 @@ public class RegisterActivity extends AppCompatActivity {
         registerImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Build the list of required permissions dynamically based on the device's Android version
                 java.util.List<String> permissionsList = new java.util.ArrayList<>();
                 permissionsList.add(Manifest.permission.CAMERA);
 
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
-                    // Android 13 (API 33) and above uses granular media permissions
+                    //Android 13 (API 33) and above uses granular media permissions
                     permissionsList.add(Manifest.permission.READ_MEDIA_IMAGES);
                 } else {
-                    // Android 12 and below use the classic storage permissions
+                    //Android 12 and below use the classic storage permissions
                     permissionsList.add(Manifest.permission.READ_EXTERNAL_STORAGE);
                     permissionsList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
                 }
 
-                // Pass the dynamically built list to Dexter
                 Dexter.withContext(RegisterActivity.this)
                         .withPermissions(permissionsList)
                         .withListener(new BaseMultiplePermissionsListener() {
                             @Override
                             public void onPermissionsChecked(MultiplePermissionsReport report) {
                                 if (report.areAllPermissionsGranted()) {
-                                    // Launch ImageActivity safely
                                     Intent intent = new Intent(RegisterActivity.this, ImageActivity.class);
                                     startActivityForResult(intent, REQUEST_CODE_IMAGE_SCREEN);
                                 } else {
