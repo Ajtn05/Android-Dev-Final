@@ -104,14 +104,12 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <!-- Admin entry hidden for now; kept wired for later re-enable. -->
             <Button
                 android:id="@+id/adminButton"
                 style="@style/App.Button.Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/action_admin"
-                android:visibility="gone" />
+                android:text="@string/action_admin" />
 
             <Button
                 android:id="@+id/clearButton"
